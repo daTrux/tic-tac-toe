@@ -1,0 +1,50 @@
+<ng-container *ngIf="!winner; else gameFinished">
+  <div class="current-player">
+    <h3>
+      <i
+        [class]="
+          player === 'X'
+            ? 'fa-solid fa-xmark'
+            : player === 'O'
+            ? 'fa-solid fa-o'
+            : ''
+        "
+      ></i>
+      TURN
+    </h3>
+  </div>
+
+  <div class="board">
+    <div class="square" *ngFor="let cell of cells; let i = index">
+      <app-square [value]="cell" (click)="clickCell(i)"></app-square>
+    </div>
+  </div>
+</ng-container>
+<ng-template #gameFinished>
+  <div class="winner">
+    <ng-container *ngIf="winner !== 'Draw'; else draw">
+      <i
+        [class]="
+          winner === 'X'
+            ? 'fa-solid fa-xmark fa-9x'
+            : winner === 'O'
+            ? 'fa-solid fa-o fa-9x'
+            : ''
+        "
+      ></i>
+
+      <h3>Winner</h3>
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #draw>
+  <div class="draw">
+    <i class="fa-solid fa-xmark fa-6x"></i>
+    <i class="fa-solid fa-o fa-5x"></i>
+  </div>
+  <h3>Draw</h3>
+</ng-template>
+<div class="reset">
+  <span (click)="newGame()">Restart Game</span>
+</div>

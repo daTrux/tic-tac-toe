@@ -1,0 +1,52 @@
+.board {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-gap: 5px;
+
+  padding: 50px;
+}
+
+.square {
+  background-color: #78bec5;
+  border-radius: 14px;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+
+.current-player {
+  text-align: center;
+  width: 100%;
+}
+.winner {
+  text-align: center;
+  margin-bottom: 5rem;
+  h3 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .draw {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    i {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+.reset {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+  span {
+    cursor: pointer;
+    font-size: x-large;
+    background-color: #3d4250;
+    border-radius: 4px;
+    color: #fff;
+    padding: 14px 45px;
+    text-decoration: none;
+  }
+}
